@@ -1,0 +1,403 @@
+/* fonts */
+@font-face {
+  font-family: Objectivity;
+  src: url(/assets/objectivity-regular.woff2), url(/assets/objectivity-regular.otf);
+}
+
+@font-face {
+  font-family: Objectivity M;
+  src: url(/assets/objectivity-medium.woff2), url(/assets/objectivity-medium.otf);
+}
+
+@font-face {
+  font-family: Objectivity B;
+  src: url(/assets/objectivity-bold.woff2), url(/assets/objectivity-bold.otf);
+}
+
+/* selectors */
+img::selection {
+  background: none;
+}
+
+p::selection {
+  background: #d7950d;
+}
+
+a::selection {
+  background: #d7950d;
+}
+
+h2::selection {
+  background: #d7950d;
+}
+
+span::selection {
+  background: #d7950d;
+}
+
+/* animation */
+@keyframes honeyglow {
+  0% {
+    background-color: rgba(238, 84, 14, 0.4);
+  }
+  33.3% {
+    background-color: rgba(238, 177, 14, 0.4);
+  }
+  66.6% {
+    background-color: rgba(238, 123, 14, 0.4);
+  }
+  100% {
+    background-color: rgba(238, 84, 14, 0.4);
+  }
+}
+
+/* main styles */
+body {
+  font-family: Objectivity, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #ffad1b;
+  background-image: url(/assets/honeybee-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+  cursor: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+a {
+  font-family: Objectivity M;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding-bottom: 1.5px;
+  cursor: none;
+  transition: border-bottom 0.5s ease;
+}
+
+.object-m {
+  font-family: Objectivity M;
+}
+
+#cursor {
+  position: absolute;
+  width: 37px;
+  height: 48px;
+  z-index: 2;
+  background-image: url(/assets/honeybee-cursor.png);
+  transform-origin: 50% 0;
+}
+
+header .logo {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+header .logo img {
+	width: 405px;
+	height: 109px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  margin: 0 3vw;
+  height: 400px;
+}
+
+section .player {
+  display: grid;
+  place-items: center;
+  background-color: rgba(238, 123, 14, 0.4);
+  padding: 28px;
+  animation: honeyglow 5s ease-in-out infinite;
+}
+
+section .player h2 {
+  grid-area: 1/1;
+  width: 400px;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.underline {
+  border-bottom: 2px dashed rgba(238, 222, 182, 0.6);
+  color: #ffdb66;
+  transition: border-bottom 0.5s;
+}
+
+.underline:hover {
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.6);
+}
+
+section .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(238, 123, 14);
+  height: 100%;
+  padding: 28px;
+}
+
+section .description h2 {
+  font-family: Objectivity B;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  width: 300px;
+}
+
+section .description p {
+  letter-spacing: 0.2px;
+  color: #ffe07c;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 50px 0 50px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(255, 133, 3, 0.7);
+}
+
+.credit-opener {
+  transition: color 0.5s;
+}
+
+footer nav {
+  display: flex;
+}
+
+footer nav a {
+  cursor: none;
+  margin-right: 15px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(255, 133, 3, 0.7);
+  border-bottom: none;
+  transition: color 0.5s;
+}
+
+.credit-opener:hover,
+footer nav a:hover {
+  color: #f39b2b;
+}
+
+.credits {
+  position: fixed;
+  z-index: 1;
+  height: 0vh;
+}
+
+.queen {
+  background-image: url(/assets/honeybee-queen.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  width: 100vw;
+  height: 75vh;
+  transform: translateY(-175%);
+  transition: transform 4s;
+}
+
+.open {
+  transform: translateY(-75%);
+}
+
+.credits .credits-text {
+  grid-area: 1/1;
+  padding: 5vh 5vw;
+  margin: 0 20vw;
+  text-align: center;
+  line-height: 1.8em;
+  transform: translateY(22vh);
+}
+
+.queen .credits-text a:hover {
+  border-bottom: 1px solid rgba(238, 123, 14);
+}
+
+.surprise-bee {
+  position: absolute;
+  top: 25vh;
+  right: 0;
+  width: 100%;
+  font-size: 8vw;
+  z-index: 1;
+  overflow: visible;
+}
+
+.surprise-bee span {
+  display: block;
+  position: relative;
+  left: -30vh;
+}
+
+/* mobile instruction */
+.mobile {
+  display: none;
+	align-items: center;
+	justify-content: center;
+	font-size: 4.5vh;
+	text-align: center;
+  max-width: 580px;
+	margin: 0 auto;
+	padding: 2.5vh 2vw 0 2vw;
+}
+
+.mobile-color {
+	font-size: 5vh;
+}
+
+/* responsive styles */
+@media (max-width: 900px) {
+  body {
+    justify-content: center;
+    margin: 0 2vw;
+	}
+  
+  header {
+    padding: 0 1.5vw;
+  }
+  
+  #cursor,
+  .main,
+  .credits,
+  footer {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 1023px) {
+  .credits .credits-text {
+    transform: translateY(24vh);
+  }
+}
+
+@media (max-width: 1280px) and (min-height: 800px) {
+  .credits .credits-text {
+    transform: translateY(25vh);
+  }
+}
+
+@media (max-width: 1280px) and (min-height: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  section .player h2 {
+    font-size: 46px;
+    width: 500px;
+  }
+
+  section .description h2 {
+    font-size: 32px;
+  }
+
+  .credits .credits-text {
+    transform: translateY(25vh);
+    font-size: 24px;
+    padding: 5vh 0;
+  }
+
+  .main {
+    height: 580px;
+  }
+
+  footer {
+    font-size: 18px;
+  }
+
+  footer nav a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1367px) and (min-width: 1365px) {
+  .credits .credits-text {
+    transform: translateY(24vh);
+  }
+
+  section .player h2 {
+    width: 440px;
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 22px;
+  }
+
+  .main {
+    height: 580px;
+  }
+
+  section .player h2 {
+    width: 600px;
+    font-size: 58px;
+  }
+
+  section .description h2 {
+    font-size: 40px;
+  }
+
+  footer {
+    font-size: 18px;
+  }
+
+  footer nav a {
+    font-size: 18px;
+  }
+
+  .credits .credits-text {
+    transform: translateY(20vh);
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 2561px) and (min-width: 2559px) {
+  body {
+    font-size: 28px;
+  }
+
+  .main {
+    height: 680px;
+  }
+
+  section .player h2 {
+    width: 660px;
+    font-size: 64px;
+  }
+
+  section .description h2 {
+    font-size: 46px;
+    width: 400px;
+  }
+
+  footer {
+    font-size: 28px;
+  }
+
+  footer nav a {
+    font-size: 28px;
+  }
+
+  .credits .credits-text {
+    transform: translateY(22vh);
+    font-size: 32px;
+  }
+}
