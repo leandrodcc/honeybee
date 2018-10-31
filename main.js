@@ -1,3 +1,19 @@
+// bee loading start:
+const path = anime.path('#bee-path path');
+const motionPath = anime({
+  targets: '#bee-path .el',
+  translateX: path('x'),
+  translateY: path('y'),
+  rotate: ['90deg', '-90deg'],
+  easing: 'linear',
+  duration: 4000,
+  loop: true,
+})
+
+setTimeout(() => {
+	document.querySelector(".loading").classList.add("hidden")
+}, 4000)
+
 // bee cursor start:
 document.addEventListener('mousemove', event => {
   const x = event.pageX - 25
