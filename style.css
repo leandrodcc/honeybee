@@ -19,19 +19,7 @@ img::selection {
   background: none;
 }
 
-p::selection {
-  background: #d7950d;
-}
-
-a::selection {
-  background: #d7950d;
-}
-
-h2::selection {
-  background: #d7950d;
-}
-
-span::selection {
+::selection {
   background: #d7950d;
 }
 
